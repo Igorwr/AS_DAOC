@@ -1,0 +1,57 @@
+body{
+    background-color: darkgray;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: rgb(2, 37, 37);
+    padding: 10px 20px; /* Adicionei um pouco de padding */
+}
+
+.logo {
+    font-size: 48px;
+    align-self: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-decoration: line-through;
+    letter-spacing: 2px;
+    margin: 20px 0; /* Adiciona margem vertical */
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-size: 28px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    color: #007bff;
+}
+
+.navigation a:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    color: #0056b3;
+}
+
+.qualquerCoisa {
+    color: red;
+}
