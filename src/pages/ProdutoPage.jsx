@@ -28,6 +28,9 @@ function ProdutoPage() {
 
                         </div>
                         <button onClick={() => deleteProduto(item.id)}>Excluir</button>
+                        <button onClick={() => navigation(`/produto/edit/${item.id}`)}>
+                            Editar
+                        </button>
                     </div>
                 );
             })}

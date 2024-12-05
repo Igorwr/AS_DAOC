@@ -6,6 +6,7 @@ import SobrePage from './pages/SobrePage'
 import ProdutoPage from './pages/ProdutoPage'
 import ProdutoDetalhe from './pages/ProdutoDetalhe'
 import ProdutoCadastrar from './pages/ProdutoCadastrar'
+import ProdutoPageEdit from './pages/ProdutoPageEdit'
 
 function App() {
 
@@ -20,11 +21,8 @@ function App() {
         <Route path="/cadastrar/produto" element={<ProdutoCadastrar />} />
         <Route path="/produto" element={<ProdutoPage/>}/>
         <Route path="/produto/:id" element={<ProdutoDetalhe/>}/>
-
-
-
-
-
+        <Route path="/produto/edit/:id" element={<ProdutoPageEdit/>} />
+        
         <Route path='*' element="Tela de erro" />
 
       </Routes>
