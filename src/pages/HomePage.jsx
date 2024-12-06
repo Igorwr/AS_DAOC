@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { data } from "../mock/data";
 import { useNavigate } from "react-router-dom";
+import'./HomePage.css';
 
 function HomePage() {
     const navigation = useNavigate()
@@ -14,9 +16,10 @@ function HomePage() {
     }
 
     return <>
-    
-        <button onClick={handleSubmit}>Salvar Dados</button>
-        {pessoas.map(item => <h1>{item.name}</h1>)}
+    <div className="home-container">
+        <h1>Seja Bem-Vindo</h1>
+        <p>Cadastre seu produto ou entre em contato com nossos Colaboradores!</p>
+    </div>
     </>
 }
 

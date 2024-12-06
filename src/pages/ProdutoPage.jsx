@@ -1,40 +1,48 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './ProdutoPage.css';
 
 function ProdutoPage() {
-    const navigation = useNavigate()
-    const [produtos, setProdutos] = useState([])
+    const navigate = useNavigate();
+    const [produtos, setProdutos] = useState([]);
 
     async function getAllProducts() {
         const resposta = await fetch("http://localhost:3001/products");
-        const respostaProdutos = await resposta.json()
-        setProdutos(respostaProdutos)
+        const respostaProdutos = await resposta.json();
+        setProdutos(respostaProdutos);
     }
 
-    useEffect(() => { getAllProducts() }, [])
+    useEffect(() => {
+        getAllProducts();
+    }, []);
+
     async function deleteProduto(id) {
-        await fetch(`http://localhost:3001/products/${id}`, { method: "DELETE" })
-        getAllProducts()
+        await fetch(`http://localhost:3001/products/${id}`, { method: "DELETE" });
+        getAllProducts();
     }
 
     return (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "space-around" }}>
-            {produtos.map((item) => {
-                return (
-                    <div>
-                        <div >
-                            <h1>{item.name}</h1>
-                            <img onClick={() => { navigation(`/produto/${item.id}`) }} src={item.photo_url} />
-
-                        </div>
-                        <button onClick={() => deleteProduto(item.id)}>Excluir</button>
-                        <button onClick={() => navigation(`/produto/edit/${item.id}`)}>
-                            Editar
-                        </button>
+        <div className="produto-page-container">
+            {produtos.map((item) => (
+                <div className="card" key={item.id}>
+                    <h1>{item.name}</h1>
+                    <img
+                        onClick={() => { navigate(`/produto/${item.id}`); }}
+                        src={item.photo_url}
+                        alt={item.name}
+                    />
+                    <p>{item.description}</p> 
+                    <p>R$ {item.price}</p> 
+                    <div className="button-container">
+                        <button className="button excluir" onClick={() => deleteProduto(item.id)}>Excluir</button>
+                        <button className="button editar" onClick={() => navigate(`/produto/edit/${item.id}`)}>Editar</button>
                     </div>
-                );
-            })}
+                </div>
+            ))}
         </div>
     );
 }
+
 export default ProdutoPage;
+

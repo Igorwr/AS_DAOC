@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import VoltarParaPI from "./HomePage";
 
 function ProdutoDetalhe() {
     const parametros = useParametros()
@@ -21,8 +21,10 @@ function ProdutoDetalhe() {
             <h2>{produto.description}</h2>
             <h3>{produto.price}</h3>
             <img src={produto.photo_url} />
+            <button><VoltarParaPI/></button>
         </div>
 
     );
+
 }
 export default ProdutoDetalhe;

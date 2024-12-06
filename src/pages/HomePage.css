@@ -1,0 +1,26 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Faz com que a altura do contêiner seja a altura da janela de visualização */
+    text-align: center;
+    padding: 50px 20px;
+    background-color: darkgray;
+}
+
+.home-container h1 {
+    font-size: 48px; 
+    color: black;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+.home-container p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
